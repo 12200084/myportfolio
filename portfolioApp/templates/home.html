@@ -1,0 +1,268 @@
+
+{% extends 'index.html'%}
+{% block title%}Developer Sonam{% endblock title%}
+
+{% block body %}
+
+<section class="hero-section min-vh-100" id="home">
+ <div class="container-lg px-sm-5">
+    <div class="row">
+        {% for h in herosection_list %}
+        <div class="col-md-6 d-flex flex-column justify-content-center flex-wrap gap-1 py-5 m-auto">
+            <p class="hero-data-top">{{h.hero_greeting}}</p>
+            <h1 class="hero-heading" split-by="letter" letter-animation="breath" >{{h.hero_title}}</h1>
+            <p class="hero-para pb-4">
+               {{h.hero_intro}}
+            </p>
+            <div class="d-flex flex-row flex-wrap gap-3 hero-button">
+                <a href="" class="btn button bg-primary px-4 py-3 text-uppercase text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> hire me</a>
+                <a href=""  class="btn button text-uppercase px-4 py-3 btn-outline-primary">download cv</a>
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title  px-3 pt-3" id="staticBackdropLabel" style="font-weight: 900;color:blue;">HIRE ME ?</h5>
+                        <button type="button" class="btn-close pt-3 px-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="https://formspree.io/f/xdovaqew"
+                             method="POST">
+                            <div class="form-outline flex-fill mb-0 px-3">
+                                <label class="form-label" for="name"></label>
+                                <input type="text" id="name" name="name" class="form-control py-2 px-4" autocomplete="off" placeholder="Your name" required style="border-radius: 50px;font-weight:600;border: solid 2px rgba(13, 28, 237, 0.47);"/>
+                            </div>
+                            <div class="form-outline flex-fill mb-0 px-3">
+                                <label class="form-label" for="email"></label>
+                                <input type="email" id="email" name="email" class="form-control py-2 px-4" autocomplete="off" placeholder="yourname@gmail.com" required style="border-radius: 50px;font-weight:600;border: solid 2px rgba(13, 28, 237, 0.47);"/>
+                            </div>
+                            <div class="form-outline flex-fill mb-0 px-3">
+                                <label class="form-label" for="phonenumber"></label>
+                                <input type="number" id="phonenumber" name="phonenumber" class="form-control py-2 px-4" autocomplete="off" placeholder="+975 ********" required style="border-radius: 50px;font-weight:600;border: solid 2px rgba(13, 28, 237, 0.47);"/>
+                            </div>
+                            <div class="form-outline flex-fill mb-0 px-3">
+                                <label class="form-label" for="budget"></label>
+                                <input type="number" id="budget" name="budget" class="form-control py-2 px-4" autocomplete="off" placeholder="Budget: nu.750 nu.2500 nu.500 ..." required style="border-radius: 50px;font-weight:600;border: solid 2px rgba(13, 28, 237, 0.47);"/>
+                            </div>
+                            <div class="form-outline flex-fill mb-0 px-3">
+                                <label class="form-label" for="project-description"></label>
+                                <textarea name="project-description" id="project-description" cols="100%" rows="5" class="form-control p-3" autocomplete="off" placeholder="A short description of your project..." required style="border-radius: 20px;font-weight:600;border: solid 2px rgba(13, 28, 237, 0.47);"></textarea>
+                            </div>
+                        
+                            <div class="text-center mt-5 mb-4">
+                                <input type="submit" class="btn btn-primary py-2 px-5 text-uppercase" value="submit" style="border-radius: 50px;font-weight:900;border: solid 2px blue;">
+                              </div>
+                        </form>
+                        </div>
+                      </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="{{h.hero_img_link}}" width="100%" class="hero-image py-5" alt="hero image">
+        </div>
+        {% endfor %}
+    </div>
+ </div>
+</section>
+
+<section class="portfolio py-5" id="portfolio">
+    <div class="container-lg px-sm-5">
+        <h1 class="title"> My projects</h1>
+        <div class="container">
+       <div class="row d-flex flex-row flex-wrap">
+        {% for p in project_list%}
+        <div class="col-md-4 col-lg-4 col-sm-6 mb-4">
+            <div class="card shadow pb-3" style="width: 100%;">
+                <img src="{{p.image_link}}" class="card-img-top bg-primary" alt="{{p.project_name}} img">
+                <div class="card-body">
+                  <h6 class="card-title text-uppercase" style="font-weight: 800;">{{p.project_name}}</h6>
+                  <p class="card-text" style="width: 100%; height:70px;overflow-y:hidden;">{{p.project_desc}}</p>
+                  <div class="d-flex flex-row flex-wrap gap-3">
+                    <a href="{% url 'portfolioApp:projectDetail' p.id %}" class="btn btn-primary text-uppercase">View in details</a>
+                    <a href="{{p.project_link}}" class="btn btn-outline-primary text-uppercase">Github link</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+       </div>
+    </div>
+    </div>
+</section>
+
+<section class="project-completed py-5 bg-primary" style="
+        --mask:
+        radial-gradient(6.40px at 50% 9.00px,#000 99%,#0000 101%) calc(50% - 8px) 0/16px 51% repeat-x,
+        radial-gradient(6.40px at 50% -5px,#0000 99%,#000 101%) 50% 4px/16px calc(51% - 4px) repeat-x,
+        radial-gradient(6.40px at 50% calc(100% - 9.00px),#000 99%,#0000 101%) calc(50% - 8px) 100%/16px 51% repeat-x,
+        radial-gradient(6.40px at 50% calc(100% + 5.00px),#0000 99%,#000 101%) 50% calc(100% - 4px)/16px calc(51% - 4px) repeat-x;
+        -webkit-mask: var(--mask);
+            mask: var(--mask);
+      ">
+    <div class="container-lg px-sm-5">
+        <div class="row text-center text-md-start">
+        {% for pc in projectcount_list  %}
+        <div class="col-md-3 col-sm-6 col-lg-3 mb-4">
+            <h1 class="text-white">{{pc.countdown}}+</h1>
+            <p class="px-5 text-white text-capitalize" style="font-weight: 600;">{{pc.countdown_title}}</p>
+        </div>
+        {% endfor  %}
+        </div>
+    </div>
+</section>
+
+<section class="services py-5" id="services">
+    <div class="container-lg px-sm-5">
+        <h1 class="title">service offers</h1>
+        <div class="row d-flex flex-row flex-wrap">
+            {% for services_li in serviceoffer_list %}
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card bg-white p-4 text-center" style="width: 100%;">
+                    <div class="card-body">
+                        <ion-icon name="{{services_li.iconname}}" class="service-icon"></ion-icon>
+                        <h6 class="card-title text-uppercase mt-2">{{services_li.service_title}}</h6>
+                    </div>
+                  </div>
+            </div>
+            {% endfor %}
+           </div>
+    </div>
+
+</section>
+
+<section class="section section-freelancing py-5"
+style="--mask: 
+linear-gradient(#000 0 0) 50%/calc(100% - 51.80px) calc(100% - 51.80px) no-repeat,
+radial-gradient(farthest-side,#000 98%,#0000) 0 0/56px 56px round;
+-webkit-mask: var(--mask);
+      mask: var(--mask);"
+      >
+    <div class="overlay"></div>
+        <div class="container-fluid">
+            <h2>I am <span>availiable</span> for freelancing</h2>
+            <p> Hy I'm Sonam Wangchuk from Gyalposhing College of Information Technology.</p>
+            <a href="#" class="btn btn-primary px-5 py-3 text-uppercase" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Hire Me</a>
+        </div>
+</section>
+
+<section class="about py-5" id="skills"
+style="
+    --s: 100px;
+    --_g: #1c27f400 90deg,rgba(52, 9, 225, 0.167) 0;
+    background: 
+      conic-gradient(from 90deg at 2px 2px,var(--_g)),
+      conic-gradient(from 90deg at 1px 1px,var(--_g));
+    background-size: var(--s) var(--s), calc(var(--s)/5) calc(var(--s)/5);  
+">
+    <div class="container-lg px-sm-5">
+        <h1 class="title">Skills</h1>
+        <div class="row">
+            <div class="col-12 bio-data-stats">
+                {% for skill in skill_list %}
+                    <div class="bio-stats">
+                        <h3>{{skill.skill_title}}</h3>
+                        <div class="bio-progress-bar bio-progress-{{skill.skills_in_percent}}">
+                            <span>{{skill.skills_in_percent}}%</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="contact py-5" id="contact">
+    <div class="container-lg px-sm-5 ">
+        <h1 class="title">contact</h1>
+        <div class="row">
+            <div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:10px;">
+                <div>
+                    <ion-icon name="location" style="width:50px;height:50px;color:green;"></ion-icon></span>
+                </div>
+                <div style="align-self: flex-end;">
+                    {% for map in present_location %}
+                    <h4 style="font-weight: 800;">Present Location :<span style="text-transform: uppercase;color:green;padding-left:10px;">{{map.present_location}}</span></h4>
+                    {% endfor %}
+                </div>
+                
+            </div>
+            <div class="col-12 mt-2">
+            {% for map in present_location %}
+            <iframe 
+            src="{{map.location_map_api_link}}" 
+            width="100%" height="400" 
+            style="border:0;" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        {% endfor %}
+        </div>
+        <section style="background-color: #eee;">
+            <div class="row">
+            <div class="col-xl-7 col-md-7 col-xxl-7 col-sm-12 px-3">
+                <form action="https://formspree.io/f/xdovaqew"
+                method="POST">
+            <div class="form-outline flex-fill mb-0">
+                <label class="form-label" for="name"></label>
+                <input type="text" id="name" name="name" class="form-control p-3" autocomplete="off" placeholder="Name" required style="border-radius: 40px;font-weight:900;border: solid 2px blue;"/>
+              </div>
+              <div class="form-outline flex-fill mb-0">
+                <label class="form-label" for="email"></label>
+                <input type="email" id="email" name="email" class="form-control p-3" autocomplete="off" placeholder="Email" required style="border-radius: 40px;font-weight:900;border: solid 2px blue;"/>
+              </div>
+              <div class="form-outline flex-fill mb-0">
+                <label class="form-label" for="subject"></label>
+                <input type="text" id="subject" name="subject" class="form-control p-3" autocomplete="off" placeholder="Subject" required style="border-radius: 40px;font-weight:900;border: solid 2px blue;"/>
+              </div>
+              <div class="form-outline flex-fill mb-0">
+                <label class="form-label" for="message"></label>
+                <textarea name="message" id="" cols="100%" rows="5" class="form-control p-3" autocomplete="off" placeholder="Message" required style="border-radius: 40px;font-weight:900;border: solid 2px blue;"></textarea>
+              </div>
+              <div class="mt-4">
+              <input type="submit" class="btn btn-warning py-3 px-5 text-uppercase text-dark" value="send message" style="border-radius: 40px;font-weight:900;border: solid 2px blue;">
+            </div>
+            </form>
+            </div>
+            <div class="col-xl-5 col-md-5 col-xxl-5 col-sm-12 order-first">
+                <img src="../static/img/contact.png"
+                  class="img-fluid" alt="conatact">
+            </div>
+        </div>
+          </section>
+    </div>
+</div>
+</section>
+
+<section id="lr" class="learning-resource py-5 mb-4">
+    <div class="container-lg px-sm-5 ">
+        <h1 class="title">Learning Resources</h1>
+        <div class="container">
+            <div class="row">
+                {% for l in  learing_list %}
+                <div class="col-md-3 card p-5 shadow border-0" style="  
+                  --mask: 
+                    linear-gradient(#000 0 0) 50%/calc(100% - 60px) calc(100% - 60px) no-repeat,
+                    radial-gradient(30px,#0000 98%,#000) 0 -30px/55.50px 60px round no-repeat,
+                    radial-gradient(30px,#0000 98%,#000) 0 calc(100% + 30px)/55.50px 60px round no-repeat,
+                    radial-gradient(30px,#0000 98%,#000) -30px 0/60px 55.50px no-repeat round,
+                    radial-gradient(30px,#0000 98%,#000) calc(100% + 30px) 0/60px 55.50px no-repeat round;
+                clip-path: polygon(60px 0,calc(100% - 60px) 0,100% 60px,100% calc(100% - 60px),calc(100% - 60px) 100%,60px 100%,0 calc(100% - 60px),0 60px);
+                -webkit-mask: var(--mask);
+                        mask: var(--mask);
+                background-color: rgb(24, 194, 27);
+                    ">
+                    <div class="p-3">
+                        <h6><span style="font-weight: 900; padding-right: 4px;">Title:</span>{{l.title}}</h6>
+                        <a href="{{l.resource_link}}" style="color:rgb(123, 0, 139)">Open the link</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}

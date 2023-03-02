@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <script src="../static/index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        const sr = ScrollReveal({
+            distance:'45px',
+            duration:2700,
+            reset: true
+          })
+          
+          sr.reveal('.hero-section-intro',{delay:350,origin:'left'});
+    </script>
+    
+</head>
+<body>
+     <nav id="navbar" class="navbar navbar-expand-lg navbar-light  position-sticky top-0 z-1" style="background: #eeeeee;">
+      <div class="container-lg px-sm-5">
+          <a class="navbar-brand" href="#home">
+            <img src="../static/img/logo.png" alt="" width="55" height="45" class="d-inline-block align-text-top">
+          </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">potfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#lr">Learning Resource</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+  <main>
+      {% block body%}
+      {%endblock body%}
+  </main>
+  
+<footer class="text-white footer min-vh-100" style="background-color:rgb(8, 8, 124);
+    --s: 80px;
+    --c: #051564;
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: 35.36% 35.36% at;
+    --_c: #0000 66%,#2b10c1 68% 70%,#0000 72%;
+    background:
+      radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s),
+      radial-gradient(var(--_g) 0    75%,var(--_c)) var(--s) var(--s)/var(--_s),
+      radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s),
+      radial-gradient(var(--_g) 0    75%,var(--_c)) 0 0/var(--_s),
+      repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s),
+      radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s)
+      var(--c);
+      --mask:
+      radial-gradient(6.40px at 50% 9.00px,#000 99%,#0000 101%) calc(50% - 8px) 0/16px 100%,
+      radial-gradient(6.40px at 50% -5px,#0000 99%,#000 101%) 50% 4px/16px 100% repeat-x;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+      "
+  >
+  <div class="container-lg px-sm-5">
+      <div class="row py-5">
+          <div class="col-xl-3 col-md-3 col-sm-6 mb-3">
+              <h6 class=" text-capitilize pb-3">About</h6>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                  Itaque est dolores quam nobis ex neque maxime placeat tempore suscipit cupiditate?</p>
+          </div>
+          <div class="col-xl-3 col-md-3 col-sm-6 mb-3">
+              <h6 class="text-capitalize pb-3 ">Links</h6>
+              <div class="d-flex flex-column flex-wrap gap-2">
+                  <div>
+                      <span><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                      <a href="#home">Home</a>
+                  </div>
+                  <div>
+                      <span><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                      <a href="#home">About</a>
+                  </div>
+                  <div>
+                      <span><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                      <a href="#home">Services</a>
+                  </div>
+                  <div>
+                      <span><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                      <a href="#home">Portfolio</a>
+                  </div>
+                  <div>
+                      <span><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                      <a href="#home">Contact</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-3 col-sm-6 mb-3 ">
+              <h6 class="text-capitalize pb-3 ">services</h6>
+              <div class="d-flex flex-column flex-wrap gap-2">
+                  <div>
+                      <span><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                      <a href="#home">UI & UX Design</a>
+                  </div>
+                  <div>
+                      <span><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                      <a href="#home">Web Development</a>
+                  </div>
+                  <div>
+                      <span><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                      <a href="#home">App Development</a>
+                  </div>
+                  <div>
+                      <span><ion-icon name="arrow-forward-outline"></ion-icon></span>
+                      <a href="#home">AI & Machine Learning</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-xl-3 col-md-3 col-sm-6 mb-3">
+              <h6 class="text-capitalize pb-3">Have a question?</h6>
+              <div class="d-flex flex-column flex-wrap gap-2">
+                  <div>
+                      <span><ion-icon name="location"></ion-icon></span>
+                      Gyalposhing,Bhutan
+                  </div>
+                  <div>
+                      <span><ion-icon name="call" class="service-icon"></ion-icon></span>
+                          <a href="tel:+97517337528">+975 17337538</a>
+                  </div>
+                  <div>
+                      <span><ion-icon name="mail" class="service-icon"></ion-icon></span>
+                      <a href="mailto:officialsonam.gcit@gmail.com">officialsonam.gcit@gmail.com</a>
+                  </div>
+              </div>
+          </div>
+          <div class="row mt-2">
+              <div class="f-social-icons">
+                {% for s in social_meadia %}
+                <a href="{{s.instagram_link}}" target="_blank">
+                    <i class="fa-brands fa-square-instagram"></i>
+                </a>
+                <a href="{{s.linked_link}}" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="{{s.facebook_link}}" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                {% endfor %}
+              </div>
+          </div>
+          <div class="row">
+              <hr>
+              {% for c in copyright_list%}
+              <p class=" text-center">{{c.copyright}}</p>
+              {% endfor %}
+          </div>
+      </div>
+
+   </div>
+</footer>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,1009 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+
+  
+.ml-auto{
+    margin-left: auto;
+}
+.navbar-nav li{
+    padding:  0 15px;
+    position: relative;
+}
+.navbar-nav li a{
+    color: #000 !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.navbar-nav li a::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    border-radius: 100px;
+    background-color: #0743cf;
+    bottom: -3px;
+    left:0;
+    transition: ease 0.4s;
+}
+.navbar-nav li a:hover::after{
+    width: 100%;
+}
+.navbar-nav li a:hover{
+    color:rgb(8, 8, 124) !important;
+}
+
+/* hero-section */
+.hero-section{
+    background-color: #eeeeee;
+    
+}
+.hero-data-top{
+    text-transform: uppercase;
+    font-weight:900;
+    font-size: 1.8rem;
+    padding: 0;
+
+}
+.hero-heading{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3rem;
+    background-color: rebeccapurple;
+    background-image: url('../static/img/sonam.jpg');
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color:transparent;
+    width: 100%;
+    animation: typing 3s steps(22) infinite, blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+@media (max-width:650px){
+    .hero-heading{
+        animation: typing 3s steps(22) infinite, blink .5s step-end infinite alternate;
+        white-space: pre-wrap;
+        overflow: hidden;
+    }
+
+}
+
+.hero-para{
+    font-weight: 500;
+    max-width: 60rem;
+    text-transform: capitalize;
+}
+
+.hero-image{
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+    animation: water-wave 7s linear infinite;
+    max-width: 100vh;
+}
+.hero-button .btn{
+    font-weight: 600;
+}
+.hero-button .bg-primary:hover{
+    background: #eee;
+    color: #000;
+    border-color: blue;
+
+
+}
+/* porfoilio */
+.title{
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-top: 20px;
+    text-shadow:   0 1px 0 hsl(174,5%,80%),
+                   0 2px 0 hsl(174,5%,75%),
+                   0 3px 0 hsl(174,5%,70%),
+                   0 4px 0 hsl(174,5%,66%),
+                   0 5px 0 hsl(174,5%,64%),
+                   0 6px 0 hsl(174,5%,62%),
+                   0 7px 0 hsl(174,5%,61%),
+                   0 8px 0 hsl(174,5%,60%),
+  
+                   0 0 5px rgba(0,0,0,.05),
+                  0 1px 3px rgba(0,0,0,.2),
+                  0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.2),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.3);
+
+
+}
+.title::before{
+    content: '';
+    background:#0743cf;
+    height: 5px;
+    width: 300px;
+    display: block;
+    transform: translateY(68px);
+}
+.title::after{
+    content: '';
+    background:#0743cf;
+    height: 25px;
+    width: 25px;
+    margin-bottom: 46px;
+    border-radius: 100px;
+    display: block;
+    transform: translateY(4px);
+}
+.project-completed h1{
+    font-weight: 900;
+    font-size: 4rem;
+}
+/* services */
+.services{
+    background-color: #eeeeee
+}
+.services .service-icon{
+    width: 8rem;
+    height: 8rem;
+    color:rgb(51, 51, 185);
+    background-color: rgb(144 172 209/20%);
+    display: inline-block;
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+    padding: 1.4rem 1.8rem;
+    position: relative;
+    animation: water-wave 3s linear infinite; 
+}
+.services .service-icon::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    height: 90%;
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+    background-color: transparent;
+    border: 1px solid cyan;
+    animation: water-wave 3s linear infinite;
+    
+}
+.services h6{
+    font-weight: 900;
+    color: #000;
+}
+
+.section-freelancing{
+    background-image: url(../static/img/freelancing.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    position: relative;
+    transition: all 0.7s linear;
+    text-align: center;
+    
+}
+.section-freelancing .overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3e64ff;
+    opacity: 0.7;
+}
+.section-freelancing .container-fluid{
+    position: relative;
+}
+.section-freelancing h2{
+    font-size: 4rem;
+    font-weight: 600;
+}
+.section-freelancing a{
+    font-weight: 800;
+}
+.section-freelancing span{
+    color: #a0F669;
+}
+.section-freelancing p{
+    font-size: 18px;
+}
+.section-freelancing h2,
+.section-freelancing p{
+    color: #fff;
+    margin-bottom: 1.8rem;
+}
+.bio-data-stats{
+    display: flex;
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    gap: 3rem;
+}
+.bio-data-stats h3{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+.bio-progress-bar{
+    width: 100%;
+    height: 0.8rem;
+    background-color: #eee;
+    border-radius: 10rem;
+    box-shadow: grey;
+    position: relative;
+}
+.bio-progress-bar::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    background: blue;
+    border-radius: inherit;
+}
+.bio-progress-1::before{
+     width: 1%;
+}
+.bio-progress-2::before{
+    width: 2%;
+}
+.bio-progress-3::before{
+    width: 3%;
+}
+.bio-progress-4::before{
+    width: 4%;
+}
+.bio-progress-5::before{
+    width: 5%;
+}
+.bio-progress-6::before{
+    width: 6%;
+}
+.bio-progress-7::before{
+    width: 7%;
+}
+.bio-progress-8::before{
+    width: 8%;
+}
+.bio-progress-9::before{
+    width: 9%;
+}
+.bio-progress-10::before{
+    width: 10%;
+}
+.bio-progress-11::before{
+    width: 11%;
+}
+.bio-progress-12::before{
+    width: 12%;
+}
+.bio-progress-13::before{
+    width: 13%;
+}
+.bio-progress-14::before{
+    width: 14%;
+}
+.bio-progress-15::before{
+    width: 15%;
+}
+.bio-progress-16::before{
+    width: 16%;
+}
+.bio-progress-17::before{
+    width: 17%;
+}
+.bio-progress-18::before{
+    width: 18%;
+}
+.bio-progress-19::before{
+    width: 19%;
+}
+.bio-progress-20::before{
+    width: 20%;
+}
+.bio-progress-21::before{
+    width: 21%;
+}
+.bio-progress-22::before{
+    width: 22%;
+}
+.bio-progress-23::before{
+    width: 23%;
+}
+.bio-progress-24::before{
+    width: 24%;
+}
+.bio-progress-25::before{
+    width: 25%;
+}
+.bio-progress-26::before{
+    width: 26%;
+}
+.bio-progress-27::before{
+    width: 27%;
+}
+.bio-progress-28::before{
+    width: 28%;
+}
+.bio-progress-29::before{
+    width: 29%;
+}
+.bio-progress-30::before{
+    width: 30%;
+}
+.bio-progress-31::before{
+    width: 31%;
+}
+.bio-progress-32::before{
+    width: 32%;
+}
+.bio-progress-33::before{
+    width: 33%;
+}
+.bio-progress-34::before{
+    width: 34%;
+}
+.bio-progress-35::before{
+    width: 35%;
+}
+.bio-progress-36::before{
+    width: 36%;
+}
+.bio-progress-37::before{
+    width: 37%;
+}
+.bio-progress-38::before{
+    width: 38%;
+}
+.bio-progress-39::before{
+    width: 39%;
+}
+.bio-progress-40::before{
+    width: 40%;
+}
+.bio-progress-41::before{
+    width: 41%;
+}
+.bio-progress-42::before{
+    width: 42%;
+}
+.bio-progress-43::before{
+    width: 43%;
+}
+.bio-progress-44::before{
+    width: 44%;
+}
+.bio-progress-45::before{
+    width: 45%;
+}
+.bio-progress-6::before{
+    width: 46%;
+}
+.bio-progress-47::before{
+    width: 47%;
+}
+.bio-progress-48::before{
+    width: 48%;
+}
+.bio-progress-49::before{
+    width: 49%;
+}
+.bio-progress-50::before{
+    width: 50%;
+}
+.bio-progress-51::before{
+    width: 51%;
+}
+.bio-progress-52::before{
+   width: 52%;
+}
+.bio-progress-53::before{
+   width: 53%;
+}
+.bio-progress-54::before{
+   width: 54%;
+}
+.bio-progress-55::before{
+   width: 55%;
+}
+.bio-progress-56::before{
+   width: 56%;
+}
+.bio-progress-57::before{
+   width: 57%;
+}
+.bio-progress-58::before{
+   width: 58%;
+}
+.bio-progress-59::before{
+   width: 59%;
+}
+.bio-progress-60::before{
+   width: 60%;
+}
+.bio-progress-61::before{
+   width: 61%;
+}
+.bio-progress-62::before{
+   width: 62%;
+}
+.bio-progress-63::before{
+   width: 63%;
+}
+.bio-progress-64::before{
+   width: 64%;
+}
+.bio-progress-65::before{
+   width: 65%;
+}
+.bio-progress-66::before{
+   width: 66%;
+}
+.bio-progress-67::before{
+   width: 67%;
+}
+.bio-progress-68::before{
+   width: 68%;
+}
+.bio-progress-69::before{
+   width: 69%;
+}
+.bio-progress-70::before{
+   width: 70%;
+}
+.bio-progress-71::before{
+   width: 71%;
+}
+.bio-progress-72::before{
+   width: 6%;
+}
+.bio-progress-73::before{
+   width: 73%;
+}
+.bio-progress-74::before{
+   width: 74%;
+}
+.bio-progress-75::before{
+   width: 75%;
+}
+.bio-progress-76::before{
+   width: 76%;
+}
+.bio-progress-77::before{
+   width: 77%;
+}
+.bio-progress-78::before{
+   width: 78%;
+}
+.bio-progress-79::before{
+   width: 79%;
+}
+.bio-progress-80::before{
+   width: 80%;
+}
+.bio-progress-81::before{
+   width: 81%;
+}
+.bio-progress-82::before{
+   width: 82%;
+}
+.bio-progress-83::before{
+   width: 83%;
+}
+.bio-progress-84::before{
+   width: 84%;
+}
+.bio-progress-85::before{
+   width: 85%;
+}
+.bio-progress-86::before{
+   width: 86%;
+}
+.bio-progress-87::before{
+   width: 87%;
+}
+.bio-progress-88::before{
+   width: 88%;
+}
+.bio-progress-89::before{
+   width: 89%;
+}
+.bio-progress-90::before{
+   width: 90%;
+}
+.bio-progress-91::before{
+   width: 91%;
+}
+.bio-progress-92::before{
+   width: 92%;
+}
+.bio-progress-93::before{
+   width: 93%;
+}
+.bio-progress-94::before{
+   width: 94%;
+}
+.bio-progress-95::before{
+   width: 95%;
+}
+.bio-progress-96::before{
+   width: 96%;
+}
+.bio-progress-97::before{
+   width: 97%;
+}
+.bio-progress-98::before{
+   width: 98%;
+}
+.bio-progress-99::before{
+   width: 99%;
+}
+.bio-progress-100::before{
+   width: 100%;
+}
+.bio-progress-bar span{
+    position: absolute;
+    top: 1.8rem;
+    width: 4rem;
+    height: 2rem;
+    background: cyan;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: 0;
+}
+.bio-progress-1 span{
+    left: -1%;
+}
+.bio-progress-2 span{
+    left: -1%;
+}
+.bio-progress-3 span{
+    left: -1%;  
+}
+.bio-progress-4 span{
+    left: -1%;
+}
+.bio-progress-5 span{
+    left: 1%; 
+}
+.bio-progress-6 span{
+    left: 2%;  
+}
+.bio-progress-7 span{
+    left: 3%;
+}
+.bio-progress-8 span{
+    left: 4%;
+}
+.bio-progress-9 span{
+    left: 5%;
+}
+.bio-progress-10 span{
+    left: 6%;
+}
+.bio-progress-11 span{
+    left: 7%;
+}
+.bio-progress-12 span{
+    left: 8%;
+}
+.bio-progress-13 span{
+    left: 9%;
+}
+.bio-progress-13 span{
+    left: 10%;
+}
+.bio-progress-14 span{
+    left: 11%;
+}
+.bio-progress-15 span{
+    left: 12%;
+}
+.bio-progress-16 span{
+    left: 13%;
+}
+.bio-progress-17 span{
+    left: 14%;
+}
+.bio-progress-18 span{
+    left: 15%;
+}
+.bio-progress-19 span{
+    left: 16%;
+}
+.bio-progress-20 span{
+    left: 17%;
+}
+.bio-progress-21 span{
+    left: 18%;
+}
+.bio-progress-22 span{
+    left: 19%;
+}
+.bio-progress-23 span{
+    left: 20%;
+}
+.bio-progress-24 span{
+    left: 21%;
+}
+.bio-progress-25 span{
+    left: 22%;
+}
+.bio-progress-26 span{
+    left: 23%;
+}
+.bio-progress-27 span{
+    left: 24%;
+}
+.bio-progress-28 span{
+    left: 24%;
+}
+.bio-progress-29 span{
+    left: 25%;
+}
+.bio-progress-30 span{
+    left: 26%;
+}
+.bio-progress-31 span{
+    left: 27%;
+}
+.bio-progress-32 span{
+    left: 28%;
+}
+.bio-progress-33 span{
+    left: 29%;
+}
+.bio-progress-34 span{
+    left: 30%;
+}
+.bio-progress-35 span{
+    left: 31%;
+}
+.bio-progress-36 span{
+    left: 32%;
+}
+.bio-progress-37 span{
+    left: 33%;
+}
+.bio-progress-38 span{
+    left: 34%;
+}
+.bio-progress-39 span{
+    left: 35%;
+}
+.bio-progress-40 span{
+    left: 36%;
+}
+.bio-progress-41 span{
+    left: 37%;
+}
+bio-progress-42 span{
+    left: 38%;
+}
+.bio-progress-43 span{
+    left: 39%;
+}
+.bio-progress-44 span{
+    left: 40%;
+}
+.bio-progress-45 span{
+    left:41%;
+}
+.bio-progress-46 span{
+    left:42%;
+}
+.bio-progress-47 span{
+    left:43%;
+}
+.bio-progress-48 span{
+    left: 44%;
+}
+.bio-progress-49 span{
+    left: 45%;
+}
+.bio-progress-50 span{
+    left: 47%;
+}
+.bio-progress-51 span{
+    left: 47%;
+}
+.bio-progress-52 span{
+    left: 48%;
+}
+.bio-progress-53 span{
+    left: 49%;  
+}
+.bio-progress-54 span{
+    left: 50%;
+}
+.bio-progress-55 span{
+    left: 51%; 
+}
+.bio-progress-56 span{
+    left: 52%;  
+}
+.bio-progress-57 span{
+    left: 53%;
+}
+.bio-progress-58 span{
+    left: 54%;
+}
+.bio-progress-59 span{
+    left: 55%;
+}
+.bio-progress-60 span{
+    left: 56%;
+}
+.bio-progress-61 span{
+    left: 57%;
+}
+.bio-progress-62 span{
+    left: 58%;
+}
+.bio-progress-63 span{
+    left: 59%;
+}
+.bio-progress-63 span{
+    left: 60%;
+}
+.bio-progress-64 span{
+    left: 61%;
+}
+.bio-progress-65 span{
+    left: 62%;
+}
+.bio-progress-66 span{
+    left: 63%;
+}
+.bio-progress-67 span{
+    left: 64%;
+}
+.bio-progress-68 span{
+    left: 65%;
+}
+.bio-progress-69 span{
+    left: 66%;
+}
+.bio-progress-70 span{
+    left: 67%;
+}
+.bio-progress-71 span{
+    left: 68%;
+}
+.bio-progress-72 span{
+    left: 69%;
+}
+.bio-progress-73 span{
+    left: 70%;
+}
+.bio-progress-74 span{
+    left: 71%;
+}
+.bio-progress-75 span{
+    left: 72%;
+}
+.bio-progress-76 span{
+    left: 73%;
+}
+.bio-progress-77 span{
+    left: 74%;
+}
+.bio-progress-78 span{
+    left: 75%;
+}
+.bio-progress-79 span{
+    left: 75%;
+}
+.bio-progress-80 span{
+    left: 76%;
+}
+.bio-progress-81 span{
+    left: 77%;
+}
+.bio-progress-82 span{
+    left: 78%;
+}
+.bio-progress-83 span{
+    left: 79%;
+}
+.bio-progress-84 span{
+    left: 80%;
+}
+.bio-progress-85 span{
+    left: 82%;
+}
+.bio-progress-86 span{
+    left: 82%;
+}
+.bio-progress-87 span{
+    left: 83%;
+}
+.bio-progress-88 span{
+    left: 84%;
+}
+.bio-progress-89 span{
+    left: 85%;
+}
+.bio-progress-90 span{
+    left: 86%;
+}
+.bio-progress-91 span{
+    left: 87%;
+}
+bio-progress-92 span{
+    left: 88%;
+}
+.bio-progress-93 span{
+    left: 89%;
+}
+.bio-progress-94 span{
+    left: 90%;
+}
+.bio-progress-95 span{
+    left:92%;
+}
+.bio-progress-96 span{
+    left:92%;
+}
+.bio-progress-97 span{
+    left:93%;
+}
+.bio-progress-98 span{
+    left: 94%;
+}
+.bio-progress-99 span{
+    left: 95%;
+}
+.bio-progress-100 span{
+    left: 96%;
+}
+/* to creeate caret */
+.bio-progress-bar span::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0.8rem solid black;
+    border-color: transparent;
+    border-bottom-color:cyan;
+    top: -1.5rem;
+}
+/* contact */
+.contact{
+    background-color: #eeeeee;
+}
+
+/* learning resource */
+
+
+
+/* footer */
+.footer{
+    font-size: 16px;
+    font-weight: 400;
+}
+.footer h6{
+    font-weight: 900 !important;
+    font-size: 20px !important;
+}
+.footer ul{
+    list-style: none;
+}
+.footer a{
+    color: #eee;
+    text-decoration: none;
+}
+.f-social-icons{
+    margin: 5rem 0;
+    text-align: center;
+    color: #adadad;
+}
+.f-social-icons i{
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(144, 172,208, 0.2);
+    display: inline-block;
+    padding: 1.4rem 1.8rem;
+    position:relative;
+    color: white;
+    animation: water-wave 3s linear infinite;
+}
+.f-credits p{
+    text-align: center;
+    color: #adadad;
+
+}
+footer a:hover,
+footer a:active{
+    color: wheat;
+}
+@keyframes water-wave {
+    0%{
+        border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+    }
+    50%{
+        border-radius: 3% 97% 15% 85% / 72% 0% 100% 28%;
+
+    }
+    100%{
+        border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+    }
+    
+}
+
+@media (max-width:950px) {
+    .title::after{
+        content: '';
+        background:#0743cf;
+        height: 25px;
+        width: 25px;
+        margin-bottom: 30px;
+        border-radius: 100px;
+        display: block;
+        transform: translateY(9px);
+    }
+    
+}
+@media (max-width:650px) {
+    .title::after{
+        content: '';
+        background: #0743cf;
+        height: 25px;
+        width: 25px;
+        margin-bottom: 46px;
+        border-radius: 100px;
+        display: block;
+        transform: translateY(12px);
+    }
+    
+}
+@media (max-width:600px) {
+    .title::after{
+        content: '';
+        background: #0743cf;
+        height: 25px;
+        width: 25px;
+        margin-bottom: 46px;
+        border-radius: 100px;
+        display: block;
+        transform: translateY(14px);
+    }
+    .navbar-nav li{
+        padding:  5px 0;
+        position: relative;
+    }
+    
+}
+@media (max-width:500px) {
+    .title::after{
+        content: '';
+        background: #0743cf;
+        height: 25px;
+        width: 25px;
+        margin-bottom: 46px;
+        border-radius: 100px;
+        display: block;
+        transform: translateY(17px);
+    }
+    
+}
+@keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
